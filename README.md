@@ -4,9 +4,11 @@
 
 Projeto de um Theme Switcher utilizando:
 
-- ReactJS;
+- [ReactJS](https://pt-br.reactjs.org/);
+- [react-switch](https://github.com/markusenglund/react-switch) para o interruptor;
+- [React Icons](https://github.com/react-icons/react-icons);
 - ContextAPI do React;
-- Theme Context do Styled Components;
+- [Theme Context do Styled Components](https://styled-components.com/docs/advanced);
 - Local Storage (para salvar a informação do tema atual);
 
 ----

@@ -1,39 +1,61 @@
 /** Packages */
-import React from 'react';
+import React, { useState } from 'react';
 
 /** Ícones */
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { FaSun, FaMoon } from 'react-icons/fa';
 
-/** Imagens */
-import Logo from '../../assets/logo.png';
+/** Componentes */
+import { useTheme } from '../../context/ThemeSwitcherContext';
 
 /** Componentes Personalizados */
-import { Container, Logomarca, Body, Icons } from './styles';
+import {
+  Container,
+  Title,
+  Text,
+  ThemeSwitcher,
+  LinksDiv,
+  Link,
+} from './styles';
 
 const Home: React.FC = () => {
-  const gitHubLink = 'https://github.com/pedrovasalmeida';
-  const linkedInLink =
-    'https://www.linkedin.com/in/pedro-vasconcellos-a272851a0/';
+  const { themeState, changeTheme } = useTheme();
 
   return (
     <Container>
-      <Logomarca src={Logo} alt="Logo" />
-
-      <Body>
-        <span>POWERED BY</span>
-        <span className="title">
-          Input
-          <b>On</b>
-        </span>
-      </Body>
-
-      <Icons>
-        <FaGithub className="icon" onClick={() => window.open(gitHubLink)} />
-        <FaLinkedinIn
-          className="icon"
-          onClick={() => window.open(linkedInLink)}
-        />
-      </Icons>
+      <Title>Theme Switcher</Title>
+      <Text>by Pedro H. V. Almeida</Text>
+      <ThemeSwitcher
+        onChange={changeTheme}
+        checked={themeState}
+        checkedIcon={<FaMoon size={20} />}
+        uncheckedIcon={<FaSun size={20} />}
+        offColor="#f4a261"
+        onColor="#bbb"
+        height={20}
+      />
+      <LinksDiv>
+        <Link
+          href="https://github.com/pedrovasalmeida"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/pedrovasalmeida/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </Link>
+        <Link
+          href="https://instagram.com/pedroohva"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </Link>
+      </LinksDiv>
     </Container>
   );
 };

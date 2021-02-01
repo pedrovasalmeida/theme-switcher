@@ -1,4 +1,8 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+
+import Switch from 'react-switch';
+
+import { shade } from 'polished';
 
 export const Container = styled.div`
   display: flex;
@@ -11,64 +15,51 @@ export const Container = styled.div`
 
   padding: 50px;
 
-  background-color: #74eaae;
+  background-color: ${props => props.theme.background};
 `;
 
-const float = keyframes`
-    0% {
-        transform: translatey(0px);
-    }
-    50% {
-        transform: translatey(-30px);
-    }
-    100% {
-        transform: translatey(0px);
-    }
+export const Title = styled.span`
+  color: ${props => props.theme.featured};
+  font-size: 40px;
+  font-weight: bold;
 `;
 
-export const Logomarca = styled.img`
-  width: 200px;
-  height: auto;
-  transition: 0.5s all;
-  cursor: pointer;
-  transform: translatey(0px);
-  animation: 2s ${float} ease-in-out infinite;
+export const Text = styled.span`
+  color: ${props => props.theme.text};
 `;
 
-export const Body = styled.div`
+export const ThemeSwitcher = styled(Switch)`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
 
-  span {
-    color: #fff;
-    font-size: 12px;
-  }
+  margin: 20px 0;
 
-  .title {
-    font-size: 50px;
-    font-weight: 600;
-    color: #448363;
-
-    b {
-      color: #fff;
-    }
+  svg {
+    padding-left: 7px;
+    color: #333;
   }
 `;
 
-export const Icons = styled.div`
-  margin-top: 150px;
-  color: #fff;
+export const LinksDiv = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 40px;
+`;
 
-  .icon {
-    cursor: pointer;
-    margin: 30px;
+export const Link = styled.a`
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  color: ${props => props.theme.link};
+
+  padding: 0 10px;
+
+  transition: color 300ms ease;
+
+  &:hover {
+    color: ${props => props.theme.linkHover};
+  }
+
+  &:not(:last-child) {
+    border-right: 2px solid ${props => props.theme.gray};
   }
 `;

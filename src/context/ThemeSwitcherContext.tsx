@@ -1,8 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
-import Switch from 'react-switch';
-
-import { FaSun, FaMoon } from 'react-icons/fa';
 
 interface ThemeContextProps {
   themeState: boolean;

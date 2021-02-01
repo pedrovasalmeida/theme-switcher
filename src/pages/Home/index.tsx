@@ -1,5 +1,5 @@
 /** Packages */
-import React, { useState } from 'react';
+import React from 'react';
 
 /** Ícones */
 import { FaSun, FaMoon } from 'react-icons/fa';

@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 import Switch from 'react-switch';
 
-import { shade } from 'polished';
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
